@@ -28,8 +28,8 @@ available_transformations = {
     'horizontal_flip': horizontal_flip
 }
 
-folder_path = 'images/cat'
-num_files_desired = 10
+folder_path = 'data/pokemon/base_pokemon'
+num_files_desired = 100
 
 # find all files paths from the folder
 images = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
@@ -50,7 +50,7 @@ while num_generated_files <= num_files_desired:
         key = random.choice(list(available_transformations))
         transformed_image = available_transformations[key](image_to_transform)
         num_transformations += 1
-        new_file_path = '%s/augmented_image_%s.jpg' % (folder_path, num_generated_files)
+        new_file_path = 'data/pokemon/augmented_pokemon/augmented_image_%s.jpg' % num_generated_files
         # write image to the disk
         io.imsave(new_file_path, transformed_image)
         num_generated_files += 1
