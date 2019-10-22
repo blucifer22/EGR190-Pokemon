@@ -48,6 +48,9 @@ num_generated_files = 0
 while num_generated_files <= num_files_desired:
     # random image from the folder
     image_path = random.choice(images)
+    # get the image number
+    split_path = os.path.split(image_path);
+    image_number = split_path[1]
     # read image as an two dimensional array of pixels
     image_to_transform = sk.io.imread(image_path)
     # random num of transformation to apply
@@ -60,7 +63,7 @@ while num_generated_files <= num_files_desired:
         key = random.choice(list(available_transformations))
         transformed_image = available_transformations[key](image_to_transform)
         num_transformations += 1
-        new_file_path = 'pokemon/augmented_pokemon/augmented_image_%s.jpg' % num_generated_files
+        new_file_path = 'pokemon/augmented_pokemon/%s_augmented_image_%s.jpg' % (image_number, num_generated_files)
         # write image to the disk
         io.imsave(new_file_path, transformed_image)
         num_generated_files += 1
