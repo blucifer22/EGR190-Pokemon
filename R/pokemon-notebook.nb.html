@@ -1753,8 +1753,19 @@ summary {
 <p>Try executing this chunk by clicking the <em>Run</em> button within the chunk or by placing your cursor inside it and pressing <em>Cmd+Shift+Enter</em>.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MjB9LCJyZGYiOiJINHNJQUFBQUFBQUFBMTFTeVU3RE1CQjFGbmNKdEN5dHhBbnhCZVFBRjg2b3BPS0NVQUhSQ3djVFRHdVJ4cFZqbHQ3NFlMNmhaZHpNR05wSUw1NnhaOFp2NW5rMEdKOG40NFF4RnJHb0ViQ0lnOG40dzMxMmVzRllISUlUc0ppMTNmb0ZRVDB3WURQcXdOcGZINjU5eUlab2x3bG9BSnFBRnNBbHV1bzdnRjJBeStzQzlnRDdnQVBBSWFCWDE5dTRzRkhJRDFsVUdObkhYWVpyZFBrK1FUTWVDUE5HU1FNakpycEVyM1ZWeU53YWxhUFBNNkhNZ2c0ek5abGFWZm95bVRLU3ltVEY0dStFRDZlNnN0NHhvcW9vYm1qMGUvbENuSzV6WCtCR201a295THZWcXZLc3dLdVU5NXEzMVNLZmVvcnhTT2ZVREwrelVsSU4vaWlzTkZzejRubmh5TlFqOG9ON0ZiblZFTXFXT0hJWWJmQ0VNblZSa2diSzAwUC9HaVZ6MGh5amhFNjJFNVQ0Q0tYcTE3bWJORW94azBRakpCcjNpN2xNeitqNWxIVk90TnBpbTd3SUs5SlhBeFcycXJhTi9reXBzbXNqL0liZmFyWDZxVnZiQ0c3cXVZV2hRbWpZdzRmNC81YkFiRzNFN2xwc1BXRDExMEc3Lzg4TzYzdGlvczJwTzFsT1ZFbHk4MEk4ZTZXNndIdE5PNTBiVmRLN1NXQzNTcTIyL2xVa3VTNW9wOVpxK1F0U0JkVi9rQU1BQUE9PSJ9 -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["Type.2"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["n"],"name":[2],"type":["int"],"align":["right"]}],"data":[{"1":"","2":"349"},{"1":"Bug","2":"3"},{"1":"Dark","2":"14"},{"1":"Dragon","2":"10"},{"1":"Electric","2":"6"},{"1":"Fairy","2":"9"},{"1":"Fighting","2":"19"},{"1":"Fire","2":"10"},{"1":"Flying","2":"73"},{"1":"Ghost","2":"8"},{"1":"Grass","2":"15"},{"1":"Ground","2":"29"},{"1":"Ice","2":"7"},{"1":"Normal","2":"11"},{"1":"Poison","2":"31"},{"1":"Posion","2":"2"},{"1":"Psychic","2":"23"},{"1":"Rock","2":"18"},{"1":"Steel","2":"20"},{"1":"Water","2":"6"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[20]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5kYXRhIDwtIHJlYWQuY3N2KFwiZGF0YS5jc3ZcIilcbmRhdGEgJT4lIFxuICBjb3VudChUeXBlLjIpXG5cblxuYGBgIn0= -->
+<pre class="r"><code>
+data &lt;- read.csv(&quot;data.csv&quot;)
+data %&gt;% 
+  count(Type.2)
+</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1763,7 +1774,7 @@ summary {
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7cn0KcGxvdChjYXJzKQpgYGAKCkFkZCBhIG5ldyBjaHVuayBieSBjbGlja2luZyB0aGUgKkluc2VydCBDaHVuayogYnV0dG9uIG9uIHRoZSB0b29sYmFyIG9yIGJ5IHByZXNzaW5nICpDbWQrT3B0aW9uK0kqLgoKV2hlbiB5b3Ugc2F2ZSB0aGUgbm90ZWJvb2ssIGFuIEhUTUwgZmlsZSBjb250YWluaW5nIHRoZSBjb2RlIGFuZCBvdXRwdXQgd2lsbCBiZSBzYXZlZCBhbG9uZ3NpZGUgaXQgKGNsaWNrIHRoZSAqUHJldmlldyogYnV0dG9uIG9yIHByZXNzICpDbWQrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4gCgpUaGUgcHJldmlldyBzaG93cyB5b3UgYSByZW5kZXJlZCBIVE1MIGNvcHkgb2YgdGhlIGNvbnRlbnRzIG9mIHRoZSBlZGl0b3IuIENvbnNlcXVlbnRseSwgdW5saWtlICpLbml0KiwgKlByZXZpZXcqIGRvZXMgbm90IHJ1biBhbnkgUiBjb2RlIGNodW5rcy4gSW5zdGVhZCwgdGhlIG91dHB1dCBvZiB0aGUgY2h1bmsgd2hlbiBpdCB3YXMgbGFzdCBydW4gaW4gdGhlIGVkaXRvciBpcyBkaXNwbGF5ZWQuCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKVGhpcyBpcyBhbiBbUiBNYXJrZG93bl0oaHR0cDovL3JtYXJrZG93bi5yc3R1ZGlvLmNvbSkgTm90ZWJvb2suIFdoZW4geW91IGV4ZWN1dGUgY29kZSB3aXRoaW4gdGhlIG5vdGVib29rLCB0aGUgcmVzdWx0cyBhcHBlYXIgYmVuZWF0aCB0aGUgY29kZS4gCgpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ21kK1NoaWZ0K0VudGVyKi4gCgpgYGB7ciBkYXRhfQoKbGlicmFyeSh0aWR5dmVyc2UpCmxpYnJhcnkoYnJvb20pCmxpYnJhcnkoZHBseXIpCmxpYnJhcnkobHVicmlkYXRlKQoKCmRhdGEgPC0gcmVhZC5jc3YoImRhdGEuY3N2IikKZGF0YSAlPiUgCiAgY291bnQoVHlwZS4yKQoKYGBgCgpBZGQgYSBuZXcgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpJbnNlcnQgQ2h1bmsqIGJ1dHRvbiBvbiB0aGUgdG9vbGJhciBvciBieSBwcmVzc2luZyAqQ21kK09wdGlvbitJKi4KCldoZW4geW91IHNhdmUgdGhlIG5vdGVib29rLCBhbiBIVE1MIGZpbGUgY29udGFpbmluZyB0aGUgY29kZSBhbmQgb3V0cHV0IHdpbGwgYmUgc2F2ZWQgYWxvbmdzaWRlIGl0IChjbGljayB0aGUgKlByZXZpZXcqIGJ1dHRvbiBvciBwcmVzcyAqQ21kK1NoaWZ0K0sqIHRvIHByZXZpZXcgdGhlIEhUTUwgZmlsZSkuIAoKVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLgoK</div>
 
 
 
