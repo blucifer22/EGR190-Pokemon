@@ -17,6 +17,12 @@ def random_noise(image_array: ndarray):
     # add random noise to the image
     return sk.util.random_noise(image_array)
 
+def random_scale(image_array: ndarray):
+    random_scale_factor = random.uniform(-2, 2)
+    rescaled_image = sk.transform.rescale(image_array, random_scale_factor, anti_aliasing=True)
+    resized_image = sk.transform.resize(rescaled_image, (256, 256), anti_aliasing=True)
+    return resized_image
+
 def horizontal_flip(image_array: ndarray):
     # horizontal flip doesn't need skimage, it's easy as flipping the image array of pixels !
     return image_array[:, ::-1]
@@ -25,7 +31,8 @@ def horizontal_flip(image_array: ndarray):
 available_transformations = {
     'rotate': random_rotation,
     'noise': random_noise,
-    'horizontal_flip': horizontal_flip
+    'horizontal_flip': horizontal_flip,
+    'random_scale': random_scale
 }
 
 folder_path = 'pokemon/base_pokemon'
