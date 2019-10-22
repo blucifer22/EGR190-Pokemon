@@ -18,7 +18,10 @@ def random_noise(image_array: ndarray):
     return sk.util.random_noise(image_array)
 
 def random_scale(image_array: ndarray):
-    random_scale_factor = random.uniform(-2, 2)
+    # scales the images by a random factor from 10% to 200%
+    # resizes the images back to 256x256 to ensure data consistency
+    # antialiasing is enabled for feature preservation
+    random_scale_factor = random.uniform(.1, 2)
     rescaled_image = sk.transform.rescale(image_array, random_scale_factor, anti_aliasing=True)
     resized_image = sk.transform.resize(rescaled_image, (256, 256), anti_aliasing=True)
     return resized_image
