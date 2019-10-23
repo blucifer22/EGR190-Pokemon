@@ -17,6 +17,15 @@ def random_noise(image_array: ndarray):
     # add random noise to the image
     return sk.util.random_noise(image_array)
 
+def random_scale(image_array: ndarray):
+    # scales the images by a random factor from 10% to 200%
+    # resizes the images back to 256x256 to ensure data consistency
+    # antialiasing is enabled for feature preservation
+    random_scale_factor = random.uniform(.1, 2)
+    rescaled_image = sk.transform.rescale(image_array, random_scale_factor, anti_aliasing=True)
+    resized_image = sk.transform.resize(rescaled_image, (256, 256), anti_aliasing=True)
+    return resized_image
+
 def horizontal_flip(image_array: ndarray):
     # horizontal flip doesn't need skimage, it's easy as flipping the image array of pixels !
     return image_array[:, ::-1]
@@ -25,7 +34,8 @@ def horizontal_flip(image_array: ndarray):
 available_transformations = {
     'rotate': random_rotation,
     'noise': random_noise,
-    'horizontal_flip': horizontal_flip
+    'horizontal_flip': horizontal_flip,
+    'random_scale': random_scale
 }
 
 folder_path = 'pokemon/base_pokemon'
@@ -38,6 +48,9 @@ num_generated_files = 0
 while num_generated_files <= num_files_desired:
     # random image from the folder
     image_path = random.choice(images)
+    # get the image number
+    split_path = os.path.split(image_path);
+    image_number = split_path[1]
     # read image as an two dimensional array of pixels
     image_to_transform = sk.io.imread(image_path)
     # random num of transformation to apply
@@ -50,7 +63,7 @@ while num_generated_files <= num_files_desired:
         key = random.choice(list(available_transformations))
         transformed_image = available_transformations[key](image_to_transform)
         num_transformations += 1
-        new_file_path = 'pokemon/augmented_pokemon/augmented_image_%s.jpg' % num_generated_files
+        new_file_path = 'pokemon/augmented_pokemon/%s_augmented_image_%s.jpg' % (image_number, num_generated_files)
         # write image to the disk
         io.imsave(new_file_path, transformed_image)
         num_generated_files += 1
