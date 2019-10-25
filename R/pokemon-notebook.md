@@ -1,6 +1,7 @@
 Pokemom Data Analysis
 ================
 Yi Chen
+Oct 24, 2019
 
 ## A Glance at the Dataset
 
@@ -61,6 +62,7 @@ Some Pokemons have secondary types:
 count2 <- data %>%
   count(type2) %>%
   arrange(desc(n)) %>%
+  # removing counts for empty strings
   slice(-1)
 count2
 ```
@@ -102,3 +104,15 @@ sum(count2$n)
 Calculating the sums, we see that the secondary type is missing for many
 Pokemon types. Therefore, we will be using `type1` to label our training
 data for the model.
+
+``` r
+count1 %>%
+  ggplot(mapping = aes(x = reorder(type1, n), y = n)) +
+  geom_col(fill = "dodgerblue") + 
+  coord_flip() + 
+  labs(x = "Count", y = "Pokemon type", 
+       title = "Counts of Pokemon Types") + 
+  theme_minimal()
+```
+
+![](pokemon-notebook_files/figure-gfm/plot-1.png)<!-- -->
