@@ -39,7 +39,7 @@ available_transformations = {
 }
 
 folder_path = 'pokemon/base_pokemon'
-num_files_desired = 5000
+num_files_desired = 7500
 
 # find all files paths from the folder
 images = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if os.path.isfile(os.path.join(folder_path, f))]
